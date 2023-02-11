@@ -1,13 +1,15 @@
 [tool.poetry]
 name = "torch-deephash-dataset"
 version = "0.1.0"
-description = ""
+description = "A simple PyTorch implementation of common datasets for Deep Hashing"
 authors = ["nghia-ndx <nghia.ndx@gmail.com>"]
 readme = "README.md"
 packages = [{include = "torch_deephash_dataset"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+torchvision = "~0.13.0"
+numpy = "~1.24"
 
 
 [build-system]
