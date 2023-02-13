@@ -37,10 +37,12 @@ class BaseDeepHashDataset(VisionDataset, ABC):
         if force_download or not self.is_dataset_existed():
             self.download_dataset()
 
+        self.load_dataset()
+
+    def load_dataset(self):
         self.img_paths = []
         self.labels = []
-
-        for img_path, label in self.get_split_iterator(split):
+        for img_path, label in self.get_split_iterator(self.split):
             self.img_paths.append(self.get_full_path(img_path))
             self.labels.append(np.array(label, dtype=np.int8))
 
