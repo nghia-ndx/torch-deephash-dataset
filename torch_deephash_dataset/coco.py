@@ -54,8 +54,9 @@ class COCODataset(BaseDeepHashDataset):
         for archive in _IMAGE_ARCHIVES + [_ANNOTATION_ARCHIVE]:
             shutil.unpack_archive(f'{self.archive_save_dir}/{archive}', self.root)
 
-    @lru_cache(maxsize=None)
-    def process_annotations_json(self, annotation_path):
+    @staticmethod
+    @lru_cache(maxsize=2)
+    def process_annotations_json(annotation_path):
         logger.info(f'Start processing {annotation_path}')
         with open(annotation_path) as file:
             annotation_json = json.load(file)
