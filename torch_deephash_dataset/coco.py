@@ -24,8 +24,8 @@ _EXTRACTED_ANNOTATION_SAVE_PATHS = [
 
 
 class COCODataset(BaseDeepHashDataset):
-    train_size = 5000
-    test_size = 1000
+    train_size = 10000
+    test_size = 2000
     k_classes = 91
 
     @property
